@@ -46,3 +46,50 @@ create table`group account`(
 );
 select * from `group account`;
 
+create table `typequestion` (
+`typeid` int,
+`type essay` varchar(50),
+`type multiple-choice` varchar(50)
+);
+select * from `typequestion`;
+
+create table`categoryquestion`(
+`categoryid` int,
+`categoryname` varchar(50)
+);
+select * from `categoryquestion`;
+
+Create table `question` (
+`questionid` int,
+`content` varchar(100),
+`categoryid`int,
+`typeid` int,
+`creatorid`int,
+`createdate` date
+);
+select * from `question`;
+
+create table `answer` (
+`answerid` int,
+`content` varchar(100),
+`questionid` int,
+`iscorrect` enum('true','false')
+);
+select * from `answer`;
+
+create table`exam`(
+`examid` int,
+`code` int,
+`title` varchar(50),
+`categoryid` int,
+`duration` time,
+`creatorid`int,
+`createdate` date
+);
+select * from `exam`;
+
+create table `examquestion`(
+`examid` int,
+`questionid` int
+);
+select * from `examquestion`;
